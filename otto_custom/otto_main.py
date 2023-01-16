@@ -44,8 +44,8 @@ def get_config():
 
 # -----------------------------------------------------------------------------
 if __name__ == '__main__':
-    import os
-    os.environ["PYTORCH_CUDA_ALLOC_CONF"] = 'max_split_size_mb:128'
+    # import os
+    # os.environ["PYTORCH_CUDA_ALLOC_CONF"] = 'max_split_size_mb:128'
     # get default config and overrides from the command line, if any
     config = get_config()
     config.merge_from_args(sys.argv[1:])
@@ -59,7 +59,7 @@ if __name__ == '__main__':
     from otto_datasplit import OttoDataSplit
     import pandas as pd
     import gc
-    df_loc = 'archive/train.parquet'
+    df_loc = '/kaggle/input/otto-full-optimized-memory-footprint/train.parquet'
     train_df = pd.read_parquet(df_loc)
     otto_split = OttoDataSplit(train_df, min_session_len=3, max_session_len=100)
     # use any type of split to get session distribution for training
