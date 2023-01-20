@@ -5,3 +5,4 @@ __pycache__/
 .pylintrc
 *.egg-info/
 otto_custom/data/*
+events.out.tfevents*
