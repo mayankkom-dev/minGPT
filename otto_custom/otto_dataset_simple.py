@@ -115,7 +115,7 @@ def get_loader(df_loc,
 
 if __name__ == "__main__":
     # may wanna use sorted by len batch and train
-    loader, dataset = get_loader(df_loc='otto_custom/data/archive/train.parquet', session_ids=list(range(10000)))
+    loader, dataset = get_loader(df_loc='otto_custom/data/archive/train.parquet', session_ids=list(range(10000)), enc_window=3)
     for idx, (session_aid, session_aid_type, session_type_target, session_aid_target) in enumerate(loader):
         print(session_aid.shape)
         print(session_aid_type.shape)
